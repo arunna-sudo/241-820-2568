@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: blue;
+        }
+        .container .item {
+            background-color: aquamarine;
+        }
+        .main-container . .item {
+            background-color: lightcoral
+
+        }
+        .button{
+            background-color: blue;
+            border: 0 ;
+            padding: 10 px ;
+        }
+        .button.active {
+            background-color: green;
+        }
+        .button.danger {
+            background-color: brown;
+
+        }
+        .item1 + .item2 {
+            background-color: yellow;
+        }
+        input{types: "text";}{
+            border: 2px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. item เป็นลูกค้าของ container -->
+    <div class = "container">
+        Container
+        <div class = "item">
+            Item 1 
+        </div>
+    </div>
+    <div class = "footer-container">
+        Container
+        <div class="item">
+            Item1
+        </div>
+    </div>
+    <!--2. item เป็นลูกของContainer เเค่ชั้นเดียว-->
+    <div class = "main container">
+        Container
+            <div class = "Item">
+                Item
+                <div class = "item">
+                    Item1
+                </div>
+                    <div class = "item">
+                        Item2
+                        <div class = "item" >
+                            Item3
+                        </div>
+                        
+
+                     </div>
+                
+            
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <!-- 3. มี class ติดกัน -->
+     <button class="button">click Me</button>
+     <button class ="button active">Click me</button>
+     <button class ="button danger">Click me</button>
+
+     <!-- 4. เหมือนกัน -->
+      <div class = "item1">item1</div>
+    <div class="item2">item2</div>
+    <!--5. attribute selector-->
+    <input type ="text" name = "firstname">
+    
+</body>
+</html>

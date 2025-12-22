@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <!--ส่วนนี้ไม่เเสดงออกไปหน้าจอของ browers  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* เเต่งใคร ? (id class DOM) 2. เเต่งอะไร ? */
+  
+    #register {
+    font-size: 24px;
+    color: blue;
+    font-weight: 800;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: lightgray; 
+    border: 1px solid black;
+    padding-left: 10px;
+}
+    @font-face {
+    font-family: 'Kanit';
+    src: url('fonts/Kanit/-Regular.tff') format('truetype');
+}
+body{
+  font-family: 'Kanit',sans-serif ;
+}
+
+  </style>
+</head>
 <body>
+  <!--ส่วนที่เเสดงออกไปหน้า browers  -->
+  <!-- form  -->
+   <div id="register">Register Form</div>
+   ชื่อ <input class= "form" type="text">
+   นามสกุล<input class= "form" type="text"> <br>
+   อายุ<input class= "form" type="number" min="0" max="150"> <br>
+   เพศ<input  type="radio" name="gender" value="male"> ชาย
+   <input type="radio" name="gender" value="female"> หญิง
 
-<h2>Submit Button</h2>
-
-<p>The <strong>input type="submit"</strong> defines a button for submitting form data to a form-handler:</p>
-
-<form action="/action_page.php">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-<p>If you click "Submit", the form-data will be sent to a page called "/action_page.php".</p>
-
+   งานอดิเรก<br>
+   <input type="checkbox"  name="hobby" value="reading"> อ่านหนังสือ <br>
+   <input type="checkbox"  name="hobby" value="traveling"> ท่องเที่ยว <br>
+   <input type="checkbox"  name="hobby" value="sports"> เล่นกีฬา <br>
+   
+   อธิบายตัวเอง<br>
+   <textarea class= "form"  row="4" cols="50"></textarea><br>
+   <input class= "form"  type="submit" value="submit">
 </body>
 </html>
-
