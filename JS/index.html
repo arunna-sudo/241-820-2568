@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    ชื่อ <input type="text" id="nameInput" oninput="chageFname()"/>
+
+<h1> งานอดิเรก </h1>
+<div id = "content"></div>
+
+    <input type="checkbox" name="hobby" value="reading"> อ่านหนังสือ
+<input type="checkbox" name="hobby" value="swimming"> ว่ายน้ำ
+<input type="checkbox" name="hobby" value="gaming"> เล่นเกม
+<button onclick="summitHobby()">Submit</button>
+
+<script>
+    function summitHobby() {
+    let hobbies = document.querySelectorAll('input[name="hobby"]');
+    let contenthtml = '<ul>';
+
+    for (let i = 0; i < hobbies.length; i++) {
+        if (hobbies[i].checked) {
+            contenthtml += '<li>' + hobbies[i].value + '</li>';
+            console.log(hobbies[i].value);
+        }
+    }
+    contenthtml += '</ul>';
+
+    let contenDiv = document.getElementById("content");
+    contenDiv.innerHTML = contenthtml;
+    }
+</script>
+    
+    <script src="main.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+    <div id = "hi">Hi <span style= "display: none;"A></span></div>
+    <script>
+        let hiDom = document.getElementById("hi");
+        hiDom.innerHTML = "Hi <b> B </b>";
+
+
+        console.log(hiDom.textContent); 
+        console.log(hiDom.innerHTML);
+        console.log(hiDom.innerText);
+        
+
+
+/*
+        function chageFname() {
+            // แก้ตัวสะกด console และ document
+            console.log("key down event detected");
+            
+            // เลือก input โดยใช้ ID ที่ตั้งไว้ข้างบน
+            let inputElemenbt = document.getElementById("nameInput");
+            
+            // แสดงค่า value ออกทาง console
+            console.log(inputElemenbt.value);
+        }
+        <div onomouseover ="Overitem()"
+        onmouseup="UpItem()"
+        onmousedown="DownItem()">Clck</div>
+        function Overitem(){
+            console.log("Mouse over detected");
+        
+        }
+        function UpItem(){
+            consloe.log("Mouse up detected");
+        
+        }
+        function DownItem(){
+            consloe.log("mouse down detected")
+        }
+        */
+
+        
+    </script>
+    
+</body>
+</html>

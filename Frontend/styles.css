@@ -1,0 +1,92 @@
+/* ตั้งค่า Font และพื้นหลังแบบไล่เฉดสี (Gradient) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* เปลี่ยนจากสีเทา เป็นสีฟ้าไล่เฉดสวยๆ */
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* กล่อง Container หลัก */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px; /* เพิ่มความมนให้ดูนุ่มนวลขึ้น */
+    /* เพิ่มเงาให้ฟุ้งขึ้น เพื่อให้กล่องลอยเด่นออกมาจากพื้นหลัง */
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* หัวข้อ Register form */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* จัดระเบียบแต่ละแถว */
+.form-input { margin-bottom: 15px; }
+.header-form { font-weight: 600; margin-bottom: 5px; color: #555; }
+
+/* ตกแต่ง Input และ Textarea */
+.form, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.2);
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* ส่วนของ Flexbox และการจัดเรียง */
+.flex { display: flex; gap: 15px; align-items: center; margin-top: 5px; }
+.hobby-list { display: flex; flex-direction: column; gap: 8px; margin-top: 5px; }
+
+/* ปรับแต่ง Cursor และการจัดวาง Label */
+label { cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 14px; }
+.flex label { display: inline-flex; }
+
+/* ปุ่มกด */
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* ปุ่มลอยขึ้นเมื่อชี้ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* เพิ่มเงาตอนชี้ */
+}
+
+/* ตกแต่ง Checkbox และ Radio */
+input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #007bff; /* เปลี่ยนสีติ๊กให้เป็นสีฟ้าธีมเดียวกับปุ่ม */
+}
