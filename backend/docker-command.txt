@@ -1,0 +1,41 @@
+// show all containers (defalut show just runing)
+docker ps ---all 
+ 
+// show just running containers
+docker ps 
+
+//stop containers 
+docker stop <containers_id>
+
+//create a containers from a image
+docker create <image_name>
+
+//start a containers
+docker start <containers_id>
+
+//remove a containers
+docker rm <containers_id>
+
+//remove all containers
+docker system prune 
+
+// nginx sever 
+docker run nginx
+
+//sh containers
+docker run -it <image_name or containers_id > sh
+
+
+// cat file inside containers
+cat <file_name.txt>
+
+
+//ติดตั้ง ping ใน linux container
+apt update
+apt install -y iputils-ping
+
+// forground mode
+$ docker run -p 80:80 nginx
+
+//detached mode 
+docker run -d -p 9100:80 nginx
