@@ -4,6 +4,7 @@ services:
   db: 
     image: mysql:8.0
     container_name: mysql_db_820
+ 
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -26,7 +27,8 @@ services:
       PMA_PASSWORD: root
       UPLOAD_LIMIT: 64M
     ports:
-      - "8080:80"
+    
+      - "8181:80"
     depends_on:
       - db
     networks:
