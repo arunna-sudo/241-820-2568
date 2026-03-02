@@ -37,9 +37,9 @@
         <div class="form-input">
             <div class="header-form">งานอดิเรก</div>
             <div class="hobby-list">
-                <label><input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ</label>
-                <label><input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง</label>
-                <label><input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง</label>
+                <label><input name="interests" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ</label>
+                <label><input name="interests" type="checkbox" value="ดูหนัง"> ดูหนัง</label>
+                <label><input name="interests" type="checkbox" value="ฟังเพลง"> ฟังเพลง</label>
             </div>
         </div>
 
@@ -47,11 +47,15 @@
             <div class="header-form">คำอธิบาย</div>
             <textarea class="form" name="description" placeholder="พิมพ์รายละเอียด..."></textarea>
         </div>
-
+        
+        <div id="message" class="message"></div>
+            
         <div class="center">
             <button onclick="submitData()" class="button">ส่งข้อมูล</button>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="index.js"></script>
+</body>
 </body>
 </html>
