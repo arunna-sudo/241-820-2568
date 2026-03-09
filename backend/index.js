@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const port = 8000;
 const mysql = require('mysql2/promise');
+const e = require('express');
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -49,11 +50,41 @@ app.get('/users',async (req, res) => {
     const results = await conn.query('SELECT * FROM user');
     res.json(results[0]);
 });
+const validateData = (userData) => {
+    let errors = [];
+    if (!userData.firstName) {
+        errors.push('กรุณากรอกชื่อ');
+    }
+    if (!userData.lastName) {
+        errors.push('กรุณากรอกนามสกุล');
+    }
+    if (!userData.age) {
+        errors.push('กรุณากรอกอายุ');
+    }
+    if (!userData.gender) {
+        errors.push('กรุณาเลือกเพศ');
+    }
+    if (!userData.interests) {
+        errors.push('กรุณาเลือกงานอดิเรก');
+    }
+    if (!userData.description) {
+        errors.push('กรุณากรอกคำอธิบาย');
+    }
+    return errors;
+}
 
 //ptah =  POST /users สำหรับเพิ่มผู้ใช้ใหม่
 app.post('/users', async (req, res) => {
 try {
      let user = req.body;
+     const errors = validateData(user);
+     if (errors.length > 0) {
+        throw {
+            message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+            errors: errors
+        }
+     }
+     
     const result = await conn.query('INSERT INTO user SET ?', user);
     res.json({
         message: 'User added successfully',
@@ -63,10 +94,13 @@ try {
     });
 
 } catch (error) {
+    const errorMessage = error.message || 'Error adding user';
+    const errors = error.errors || [];
+    
     console.error("Database query error:", error.message);
     res.status(500).json({
-        message: error.message,
-        error: error.message
+        message: errorMessage,
+        errors: errors
     });
 }
 });
